@@ -1,3 +1,8 @@
+# This fork fixes ripemd160 not being supported in Python 3.10 or something
+# Installation:
+
+`pip3 install 'git+https://github.com/sh4dowb/coinaddress'`
+
 ===========
 coinaddress
 ===========
