@@ -2,6 +2,7 @@ import hashlib
 from binascii import unhexlify, hexlify
 
 import base58
+from ripemd_impl import ripemd160
 
 from sha3 import keccak_256
 
@@ -24,8 +25,8 @@ class BaseNetwork:
     def public_key_to_address(self, node):
         key = unhexlify(node.hex())
         # First get the hash160 of the key
-        rh = hashlib.new('ripemd160', hashlib.sha256(key).digest())
-        hash160_bytes = rh.digest()
+        #rh = hashlib.new('ripemd160', hashlib.sha256(key).digest())
+        hash160_bytes = ripemd160(hashlib.sha256(key).digest()) #rh.digest()
         # Prepend the network address byte
         network_hash160_bytes = \
             bytes([self.pubkey_address_prefix]) + hash160_bytes
