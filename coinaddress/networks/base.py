@@ -2,7 +2,7 @@ import hashlib
 from binascii import unhexlify, hexlify
 
 import base58
-from ripemd_impl import ripemd160
+from coinaddress.networks.ripemd_impl import ripemd160
 
 from sha3 import keccak_256
 
